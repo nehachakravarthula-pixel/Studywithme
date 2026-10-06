@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6c987">
+<title>Little Neighborhood Study Club</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app" class="app day">
+  <div class="sky" aria-hidden="true"><div class="sun"></div><div class="moon"></div><div class="cloud c1"></div><div class="cloud c2"></div></div>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="hills back"></div><div class="hills front"></div>
+
+  <header class="topbar">
+    <button class="wood-btn small" id="homeBtn" title="Back to neighborhood">⌂</button>
+    <div class="title-plaque"><span>Little Neighborhood</span><small>study club</small></div>
+    <div class="top-actions">
+      <button class="wood-btn small" id="soundBtn" aria-label="Toggle sound">♫</button>
+      <div class="star-counter"><span class="star-icon">★</span><span id="starCount">0</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section id="intro" class="screen active">
+      <div class="street-scene">
+        <div class="street"></div>
+        <div class="house house-a"><div class="roof"></div><div class="window"></div><div class="door"></div><div class="flowers"></div></div>
+        <div class="tree big-tree"><div class="trunk"></div><div class="canopy"></div></div>
+        <div class="house tiger-house"><div class="roof"></div><div class="window"></div><div class="door"></div><div class="porch"></div><div class="flowers"></div></div>
+        <div class="mailbox"></div>
+        <div class="bird b1">⌁</div><div class="bird b2">⌁</div>
+        <div class="tiger hero-tiger" data-expression="happy">
+          <div class="tail"></div><div class="body"></div><div class="sweater"></div>
+          <div class="head"><span class="ear l"></span><span class="ear r"></span><span class="stripe s1"></span><span class="stripe s2"></span><span class="stripe s3"></span>
+            <span class="brow lb"></span><span class="brow rb"></span><span class="eye le"><i></i></span><span class="eye re"><i></i></span>
+            <span class="muzzle"></span><span class="nose"></span><span class="mouth"></span><span class="cheek cl"></span><span class="cheek cr"></span>
+          </div>
+          <div class="arm al"></div><div class="arm ar"></div><div class="leg ll"></div><div class="leg lr"></div>
+        </div>
+      </div>
+      <div class="welcome-card">
+        <div class="speech">Hi! Ready to study together?</div>
+        <h1>Come on in.</h1>
+        <p>There’s a little neighborhood waiting for you.</p>
+        <button class="storybook-btn" id="enterBtn">COME ON IN <span>→</span></button>
+      </div>
+    </section>
+
+    <section id="map" class="screen">
+      <div class="section-heading">
+        <span class="eyebrow">A little walk around the block</span>
+        <h2>Where shall we study today?</h2>
+        <p>Pick a cozy corner. Your tiger friend will meet you there.</p>
+      </div>
+      <div class="map-board">
+        <div class="map-path path1"></div><div class="map-path path2"></div><div class="map-path path3"></div>
+        <div class="map-decoration d1">✿</div><div class="map-decoration d2">✦</div><div class="map-decoration d3">❧</div>
+        <div class="location" data-location="bedroom" style="--x:11%;--y:14%"><div class="mini-scene bedroom"></div><strong>BEDROOM</strong><span>Warm & familiar.</span></div>
+        <div class="location" data-location="treehouse" style="--x:41%;--y:7%"><div class="mini-scene treehouse"></div><strong>TREEHOUSE</strong><span>Quiet and leafy.</span></div>
+        <div class="location" data-location="library" style="--x:68%;--y:14%"><div class="mini-scene library"></div><strong>LIBRARY</strong><span>Pages & peace.</span></div>
+        <div class="location" data-location="garden" style="--x:5%;--y:57%"><div class="mini-scene garden"></div><strong>GARDEN</strong><span>Flowers & sunshine.</span></div>
+        <div class="location" data-location="cafe" style="--x:38%;--y:51%"><div class="mini-scene cafe"></div><strong>COZY CAFÉ</strong><span>Warm little tables.</span></div>
+        <div class="location" data-location="porch" style="--x:69%;--y:55%"><div class="mini-scene porch"></div><strong>FRONT PORCH</strong><span>Watch the world.</span></div>
+        <div class="location" data-location="park" style="--x:19%;--y:81%"><div class="mini-scene park"></div><strong>PARK BENCH</strong><span>Breeze & birds.</span></div>
+        <div class="location" data-location="lake" style="--x:67%;--y:82%"><div class="mini-scene lake"></div><strong>LAKESIDE DOCK</strong><span>Very quiet.</span></div>
+        <div class="map-tiger" id="mapTiger">🐯</div>
+        <div class="map-sign">Welcome to our neighborhood!</div>
+      </div>
+    </section>
+
+    <section id="study" class="screen">
+      <div id="studyScene" class="study-scene">
+        <div class="scene-sun"></div><div class="scene-moon"></div><div class="scene-cloud"></div>
+        <div class="scene-backdrop"></div><div class="scene-ground"></div>
+        <div class="scene-window"></div><div class="scene-lamp"></div><div class="scene-table"></div>
+        <div class="environment"></div>
+        <div class="study-tiger tiger">
+          <div class="tail"></div><div class="body"></div><div class="sweater"></div>
+          <div class="head"><span class="ear l"></span><span class="ear r"></span><span class="stripe s1"></span><span class="stripe s2"></span><span class="stripe s3"></span>
+            <span class="brow lb"></span><span class="brow rb"></span><span class="eye le"><i></i></span><span class="eye re"><i></i></span>
+            <span class="muzzle"></span><span class="nose"></span><span class="mouth"></span><span class="cheek cl"></span><span class="cheek cr"></span>
+          </div>
+          <div class="arm al"></div><div class="arm ar"></div><div class="leg ll"></div><div class="leg lr"></div>
+          <div class="book"></div>
+        </div>
+        <div class="scene-fireflies"></div>
+      </div>
+      <div class="study-ui">
+        <div class="location-ribbon"><span id="locationName">BEDROOM</span><small id="locationTag">Warm & familiar.</small></div>
+        <div class="timer-panel">
+          <div class="timer-label">STUDYING TOGETHER</div>
+          <div id="timer">25:00</div>
+          <div class="presets">
+            <button data-min="15">15</button><button data-min="25" class="selected">25</button><button data-min="45">45</button><button data-min="60">60</button>
+          </div>
+          <div class="timer-actions"><button class="storybook-btn compact" id="pauseBtn">PAUSE</button><button class="plain-btn" id="endBtn">END SESSION</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="break" class="screen">
+      <div class="break-scene">
+        <div class="break-sky"></div><div class="break-hill"></div><div class="break-tree"></div><div class="break-ground"></div>
+        <div class="break-friends">
+          <div class="friend bunny">🐰</div><div class="friend bird">🐦</div><div class="friend turtle">🐢</div>
+        </div>
+        <div class="break-tiger tiger">
+          <div class="tail"></div><div class="body"></div><div class="sweater"></div>
+          <div class="head"><span class="ear l"></span><span class="ear r"></span><span class="stripe s1"></span><span class="stripe s2"></span><span class="stripe s3"></span>
+            <span class="brow lb"></span><span class="brow rb"></span><span class="eye le"><i></i></span><span class="eye re"><i></i></span>
+            <span class="muzzle"></span><span class="nose"></span><span class="mouth"></span><span class="cheek cl"></span><span class="cheek cr"></span>
+          </div>
+          <div class="arm al"></div><div class="arm ar"></div><div class="leg ll"></div><div class="leg lr"></div>
+        </div>
+        <div class="break-activity">A little game of catch</div>
+      </div>
+      <div class="break-card">
+        <div class="big-star">★</div>
+        <h2>Great work!</h2>
+        <p>You earned a star.<br>Your buddy is taking a little break too.</p>
+        <div class="break-stars" id="breakStars"></div>
+        <button class="storybook-btn" id="backToMap">BACK TO THE NEIGHBORHOOD <span>→</span></button>
+      </div>
+    </section>
+  </main>
+
+  <div id="completeModal" class="modal">
+    <div class="completion">
+      <div class="burst">✦</div><div class="big-star">★</div>
+      <h2>SESSION COMPLETE!</h2><p>You did a great job!</p>
+      <div class="celebrate-tiger">🐯</div>
+      <button class="storybook-btn" id="breakBtn">TAKE A LITTLE BREAK <span>→</span></button>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
